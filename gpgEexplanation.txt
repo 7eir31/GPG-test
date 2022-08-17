@@ -1,0 +1,16 @@
+GPGキー
+更新切れの場合
+
+更新する鍵のIDを調べる
+gpg --list-keys
+
+鍵の編集
+gpg --edit-key
+
+commit がfailedする場合
+echo "hoge" | gpg --clearsign
+以下のエラーが発生する場合
+gpg: signing failed: Inappropriate ioctl for device
+
+解決方法
+GPG_TTY=$(tty)
